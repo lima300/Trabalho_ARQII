@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Preditor BHT</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<div class="body container">
+		<div class="menu" id="menu-1">
+			<div class="item">
+				<div class="sub-item">Digite a quantidade de bits de PC a ser usada:</div>
+				<div><input class="input-number" id="m" type="number" value="3" min="0"></div>
+			</div>
+			<div class="item">
+				<div class="sub-item">Escolha a quantidade de bits do preditor:</div>
+				<div><input type="radio" name="n" value="1"> 1<br>
+					 <input type="radio" name="n" value="2" checked="checked"> 2<br></div>
+			</div>
+			<div class="item">
+				<div class="sub-item">Selecione o arquivo a ser utilizado:</div>
+				<div><input class="input-file" id="file-id" type="file"></div>
+			</div>
+			<div class="item">
+				<button class="botao" onclick="go()">Go!</button>
+			</div>
+		</div>
+		<div class="menu" hidden="hidden" id="menu-2">
+			<div class="item">
+				<div class="sub-item negrito">Tabela de resultados</div>
+				<div>
+					<table class="table" id="myTable">
+						<tr>
+							<td class="negrito">id</td>
+							<td class="negrito">endereco</td>
+							<td class="negrito">historico</td>
+							<td class="negrito">estado</td>
+							<td class="negrito">realizado</td>
+							<td class="negrito">predito</td>
+							<td class="negrito">acertos</td>
+							<td class="negrito">erros</td>
+							<td class="negrito">porcentagem</td>
+						</tr>
+					</table>
+				</div>
+                <div>
+                    <p id="p_texto"></p>
+                </div>
+			</div>
+			<div class="item">
+				<button id="but-next" class="botao" onclick="updateRowInTable()">Next</button>
+				<button id="but-skip" class="botao" onclick="skipAll()">Skip</button>
+			</div>
+			<div class="item-2">
+				<button class="botao" onclick="goBack()">Back</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

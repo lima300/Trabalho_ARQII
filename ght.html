@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Preditor GHT</title>
+	<link rel="stylesheet" type="text/css" href="geral.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="ght.js"></script>
+</head>
+
+<body>
+	<div class="body container">
+		<div class="menu">
+			<div class="item">
+				<h1 class="float">PREDITOR GHT</h1>
+				<button class="botao botao-i float">i
+					<div>
+						<p>Preditor Global de desvios (GHT) cria uma tabela de histórico, indexada pelos (m) últimos dígitos do PC e uma tabela global de preditores, indexada pelos históricos da tabela anterior.</p>
+					</div>
+				</button>
+			</div>
+		<div>
+		<div class="menu" id="menu-1">
+			<div class="item">
+				<div class="sub-item">Digite a quantidade de bits de PC a ser usada:</div>
+				<div>
+					<input class="input-number" id="m" type="number" value="3" min="0">
+					<button class="botao botao-i">i
+						<div>
+							<p>
+								A quantidade de bits de PC a ser usada (m) determina o tamanho da primeira tabela
+								<br>
+								a uma razão de 2<sup>m</sup>.
+							</p>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="item">
+				<div class="sub-item">Digite o tamanho do histórico:</div>
+				<div>
+					<input class="input-number" id="n" type="number" value="4" min="0">
+					<button class="botao botao-i">i
+						<div>
+							<p>
+								O tamanho do histórico a ser usado (n), em bits, determina o tamanho da segunda tabela
+								<br>
+								a uma razão de 2<sup>n</sup>.
+							</p>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="item row">
+				<div class="sub-item">Escolha a quantidade de bits do preditor:</div>
+				<div class = "column col-sm-6 col1">
+					<input type="radio" name="bit" value="1"> 1<br>
+					<input type="radio" name="bit" value="2" checked="checked"> 2<br>
+				</div>
+				<div class="column col-sm-6 col2">
+					<button class="botao botao-i">i
+						<div>
+							<p>A quantidade de bits do preditor (n) pode influenciar na precisão das predições.</p>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="item">
+				<div class="sub-item">Selecione o arquivo a ser utilizado:</div>
+				<div>
+					<input class="input-file float" id="file-id" type="file">
+					<button class="botao botao-i float">i
+						<div>
+							<p>
+								O arquivo deve ser texto, e cada linha deve apresentar o seguinte formato:
+								<br>
+								endereço do desvio seguido de um caractere T/1 para tomado
+								<br>
+								ou N/0 para não tomado, separados por espaço.
+							</p>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="item">
+				<a href="home.html"><button class="botao">Voltar</button></a>
+				<button class="botao" onclick="go()">Go!</button>
+			</div>
+		</div>
+		<div class="menu" hidden="hidden" id="menu-2">
+			<div class="item">
+				<div class="sub-item negrito">Tabela de resultados</div>
+				<div>
+					<table class="table" id="histTable">
+						<tr>
+							<td class="negrito">HASH</td>
+							<td class="negrito">ENDEREÇO DA MEMÓRIA</td>
+							<td class="negrito">PADRÃO DO HISTÓRICO</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+					<table class="table" id="patternTable">
+						<tr>
+							<td class="negrito">PADRÃO DO HISTÓRICO</td>
+							<td class="negrito">PREDITO</td>
+							<td class="negrito">REALIZADO</td>
+							<td class="negrito">ESTADO</td>
+						</tr>
+					</table>
+				</div>
+                <div>
+                    <p id="p_texto"></p>
+                </div>
+			</div>
+			<div class="item">
+				<button id="but-next" class="botao" onclick="updateRowInTable()">Next</button>
+				<button id="but-skip" class="botao" onclick="skipAll()">Skip</button>
+			</div>
+			<div class="item-2">
+				<button class="botao" onclick="goBack()">Back</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

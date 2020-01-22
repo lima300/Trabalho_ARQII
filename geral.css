@@ -1,0 +1,163 @@
+* {
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+	font-size: 40px !important;
+	font-weight: bold !important;
+	color: white !important;
+	font-family: monospace !important;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	margin-bottom: 150px !important;
+}
+
+.body {
+	margin-top: 0px !important;
+}
+
+.menu {
+	text-align: center;
+}
+
+.item {
+	margin-bottom: 5em;
+}
+
+.item-home {
+	margin-top: 300px;
+}
+
+.item-2 {
+	margin-top: -2.5em;
+	margin-bottom: 5em;
+}
+
+.sub-item {
+	margin-bottom: 1em;
+}
+
+.input-number {
+	height: 2em;
+	background-color: white;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 5px;
+	text-align: center;
+}
+
+.input-file {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.input-file:hover {
+	cursor: pointer;
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.input-file:active {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.input-file:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+table, td{
+	border: 1px solid black !important;
+}
+
+.botao {
+	border: 1px solid black;
+	border-radius: 3px;
+	background-color: white;
+	color: black;
+	width: 5em;
+	height: 2em;
+}
+
+.botao-i {
+	width: 2em;
+	border-radius: 1em;
+}
+
+.botao-i div {
+	visibility: hidden;
+	position: absolute;
+	margin-top: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: white;
+	padding: 0.2em;
+}
+
+.botao-i:hover div {
+	visibility: visible;
+}
+
+.botao:hover {
+	background-color: black;
+	color: white;
+}
+
+.botao:active {
+background-color: darkgray;
+}
+
+.botao:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.botao-home {
+	border: 1px solid black;
+	border-radius: 3px;
+	background-color: white;
+	color: black;
+	width: 150px;
+	height: 30px;
+}
+
+.botao-home:hover {
+	background-color: black;
+	color: white;
+}
+
+.botao-home:active {
+background-color: darkgray;
+}
+
+.botao-home:focus {
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.col1 {
+	text-align: right;
+}
+.col2 {
+	padding-top: 0.7em;
+	text-align: left;
+}
+
+.float {
+	display: inline-block !important;
+}

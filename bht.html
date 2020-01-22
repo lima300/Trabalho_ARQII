@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Preditor BHT</title>
+	<link rel="stylesheet" type="text/css" href="geral.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bht.js"></script>
+</head>
+<body>
+	<div class="body container">
+		<div class="menu">
+			<div class="item">
+				<h1 class="float">PREDITOR BHT</h1>
+				<button class="botao botao-i float">i
+					<div>
+						<p>Preditor Local de desvios (BHT) cria uma tabela de preditores e cada desvio existente é indexado na tabela e associado ao preditor correspondente.</p>
+					</div>
+				</button>
+			</div>
+		<div>
+		<div class="menu" id="menu-1">
+			<div class="item">
+				<div class="sub-item">Digite a quantidade de bits de PC a ser usada:</div>
+				<div>
+					<input class="input-number" id="m" type="number" value="3" min="0">
+						<button class="botao botao-i">i
+							<div>
+								<p>
+									A quantidade de bits de PC a ser usada (m) determina o tamanho da tabela
+									<br>
+									a uma razão de 2<sup>m</sup>.
+								</p>
+							</div>
+						</button>
+				</div>
+			</div>
+			<div class="item row">
+				<div class="sub-item">Escolha a quantidade de bits do preditor:</div>
+				<div class="column col-sm-6 col1">
+					<input type="radio" name="n" value="1"> 1<br>
+					<input type="radio" name="n" value="2" checked="checked"> 2<br>
+				</div>
+				<div class="column col-sm-6 col2">
+					<button class="botao botao-i">i
+						<div>
+							<p>A quantidade de bits do preditor (n) pode influenciar na precisão das predições.</p>
+						</div>
+					</button>
+				</div>
+				
+			</div>
+			<div class="item">
+				<div class="sub-item">Selecione o arquivo a ser utilizado:</div>
+				<div>
+					<input class="input-file float" id="file-id" type="file">
+					<button class="botao botao-i float">i
+						<div>
+							<p>
+								O arquivo deve ser texto, e cada linha deve apresentar o seguinte formato:
+								<br>
+								endereço do desvio seguido de um caractere T/1 para tomado
+								<br>
+								ou N/0 para não tomado, separados por espaço.
+							</p>
+						</div>
+					</button>
+				</div>
+			</div>
+			<div class="item">
+				<a href="home.html"><button class="botao">Voltar</button></a>
+				<button class="botao" onclick="go()">Go!</button>
+			</div>
+		</div>
+		<div class="menu" hidden="hidden" id="menu-2">
+			<div class="item">
+				<div class="sub-item negrito">TABELA DE RESULTADOS</div>
+				<div>
+					<table class="table" id="myTable">
+						<tr>
+							<td class="negrito">ID</td>
+							<td class="negrito">ENDEREÇO</td>
+							<td class="negrito">HISTÓRICO</td>
+							<td class="negrito">ESTADO</td>
+							<td class="negrito">REALIZADO</td>
+							<td class="negrito">PREDITO</td>
+							<td class="negrito">ACERTOS</td>
+							<td class="negrito">ERROS</td>
+							<td class="negrito">PORCENTAGEM</td>
+						</tr>
+					</table>
+				</div>
+                <div>
+                    <p id="p_texto"></p>
+                </div>
+			</div>
+			<div class="item">
+				<button id="but-next" class="botao" onclick="updateRowInTable()">Next</button>
+				<button id="but-skip" class="botao" onclick="skipAll()">Skip</button>
+			</div>
+			<div class="item-2">
+				<button class="botao" onclick="goBack()">Back</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
